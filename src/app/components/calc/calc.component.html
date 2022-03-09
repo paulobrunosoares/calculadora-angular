@@ -1,0 +1,94 @@
+
+<div class="container-calc">
+      <input class="resultMemory" value={{resultMemory}} />
+      <input type="text" class="result" value={{result}} />
+      <div class="content">
+        <div class="content-btn-number">
+          <button type="button" class="btnNumber" [title]="7" (click)="addItem($event)">
+            7
+          </button>
+          <button class="btnNumber" title="8" (click)="addItem($event)">
+            8
+          </button>
+          <button class="btnNumber" title="9" (click)="addItem($event)">
+            9
+          </button>
+          <button class="btnNumber" title="4" (click)="addItem($event)">
+            4
+          </button>
+          <button class="btnNumber" title="5" (click)="addItem($event)">
+            5
+          </button>
+          <button class="btnNumber" title="6" (click)="addItem($event)">
+            6
+          </button>
+          <button class="btnNumber" title="1" (click)="addItem($event)">
+            1
+          </button>
+          <button class="btnNumber" title="2" (click)="addItem($event)">
+            2
+          </button>
+          <button class="btnNumber" title="3" (click)="addItem($event)">
+            3
+          </button>
+          <button class="btnNumber" title="0" (click)="addItem($event)">
+            0
+          </button>
+          <button class="btnNumber" title="." (click)="addItem($event)">
+            .
+          </button>
+          <button class="btnCalcule" (click)="calc()">
+            =
+          </button>
+        </div>
+
+        <div class="content-btn-operation">
+         <button class="btnOperation op-A" title="CE" (click)="clear()">
+           CE
+         </button>
+         <button class="btnOperation op-A" (click)="raiz()">
+           R
+         </button>
+         <button
+           class="btnOperation op-P"
+           title="%"
+           (click)="calcPorcentagem()"
+         >
+           <p>%</p>
+         </button>
+         <button
+           class="btnOperation op-D"
+           value="operador"
+           title="/"
+           (click)="addItem($event)"
+         >
+           /
+         </button>
+         <button
+           class="btnOperation op-M"
+           value="operador"
+           title="*"
+           (click)="addItem($event)"
+         >
+           X
+         </button>
+         <button
+           class="btnOperation op-S"
+           value="operador"
+           title="-"
+           (click)="addItem($event)"
+         >
+           -
+         </button>
+         <button
+           class="btnOperation op-Ad"
+           value="operador"
+           title="+"
+           (click)="addItem($event)"
+         >
+           +
+         </button>
+       </div>
+      </div>
+
+</div>

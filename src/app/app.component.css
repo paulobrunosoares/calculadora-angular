@@ -1,0 +1,29 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.container {
+  height: 100vh;
+  background: rgb(40, 78,170);
+}
+
+.container .header{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 2rem; */
+}
+
+.container .header > h1 {
+  color: white;
+  margin: 1rem;
+}
+
+.footer{
+  position: absolute;
+  color: white;
+  width: 100%;
+  bottom: 40px;
+}
