@@ -13,6 +13,7 @@ export class CalcComponent implements OnInit {
   isOperador = false;
   isCalc = false;
   countOP = 0;
+  isOP = false;
 
   constructor(){}
 
@@ -21,25 +22,25 @@ export class CalcComponent implements OnInit {
   addItem(ev: any){
     // console.log(ev.target.title)
 
-    const isOP = ev.target.value === "operador";
+    this.isOP = ev.target.value === "operador";
     // Tratamento para subistuir operador
-    if (isOP && this.isOperador) {
+    if (this.isOP && this.isOperador) {
       this.result = this.result.slice(0, this.result.length - 1) + ev.target.title;
-    } else if (isOP && this.countOP == 1) {
+    } else if (this.isOP && this.countOP == 1) {
       // console.log("Count: ", countoperador);
       const soma = eval(this.result).toString().slice(0, 5);
       this.resultMemory = this.result + " = " + soma;
       this.result = soma + ev.target.title;
-      this.isOperador = isOP;
+      this.isOperador = this.isOP;
       this.isCalc =false;
     } else {
       this.isCalc
-        ? !isOP
+        ? !this.isOP
           ? this.result = ev.target.title
           : this.result = this.result + ev.target.title
         : this.result = this.result + ev.target.title;
-      if(isOP){ this.countOP = 1;}
-      this.isOperador = isOP ;
+      if(this.isOP){ this.countOP = 1;}
+      this.isOperador = this.isOP ;
       this.isCalc = false;
     }
   }
@@ -57,7 +58,7 @@ export class CalcComponent implements OnInit {
   }
 
   raiz(){
-    if(this.result){
+    if(this.result && !this.isOP){
     const raiz = Math.sqrt(Number(this.result));
     this.resultMemory = "raiz "+this.result + " = " + raiz
    isNaN(raiz)
